@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import MovieRow from "./components/MovieRow";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import logoSvg from "./moviedb-logo.svg";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+
+    // const movies = [{}];
+
+    // let movieRows = [];
+    // movies.forEach(movie => {
+    //   console.log(movie.title);
+    //   const movieRow = <MovieRow movie={movie} />;
+    //   movieRows.push(movieRow);
+    // });
+    this.handleSearch();
+  }
+
+  handleSearch() {}
+  render() {
+    return (
+      <div className="App">
+        <table className="titleBar">
+          <tbody>
+            <tr>
+              <td>
+                <img src={logoSvg} width="90" alt="MovieDB Logo" />
+              </td>
+              <td width="8" />
+              <td>
+                <h1>MoviesDB Search</h1>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <input className="searchBar" placeholder="Movie Search" />
+        {this.state}
+      </div>
+    );
+  }
 }
-
 export default App;
