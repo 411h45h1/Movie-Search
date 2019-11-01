@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      rows: null
+      rows: []
     };
 
     // const movies = [{}];
